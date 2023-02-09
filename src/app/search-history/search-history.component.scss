@@ -1,0 +1,42 @@
+h1 {
+  margin-bottom: 0;
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 500;
+  color: #413e3e;
+}
+
+h2 {
+  margin-bottom: 0;
+  text-align: center;
+  color: #5c5c5c;
+  width: 200px;
+}
+
+.history-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.histories {
+  margin-top: 20px;
+}
+
+.header {
+  display: flex;
+  gap: 200px;
+}
+
+.search-results {
+  margin-top: 20px;
+}
+
+.user {
+  display: flex;
+  gap: 100px;
+}
+
+.search-item {
+  display: flex;
+  gap: 200px;
+}

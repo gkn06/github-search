@@ -1,0 +1,53 @@
+<h1>Your Search History</h1>
+
+<div class="history-container">
+  <div class="histories" *ngIf="searchHistories.length > 0">
+    <div class="header">
+      <h2>Search Term</h2>
+      <h2>Search Results</h2>
+    </div>
+    <div *ngFor="let searchHistory of searchHistories" class="search-results">
+      <div class="search-item">
+        <h2>
+          <strong>{{ searchHistory?.searchTerm }}</strong>
+        </h2>
+        <div class="user">
+          <div>
+            <h3><strong>User Image</strong></h3>
+            <img
+              mat-card-sm-image
+              [src]="searchHistory?.result?.avatar_url"
+              width="200px"
+            />
+          </div>
+          <div>
+            <h3><strong>Github User Name</strong></h3>
+            <h3 *ngIf="searchHistory?.result?.name">
+              {{ searchHistory?.result?.name }}
+            </h3>
+            <h3
+              *ngIf="
+                searchHistory?.result?.login && !searchHistory?.result?.name
+              "
+            >
+              {{ searchHistory?.result?.login }}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="histories" *ngIf="searchHistories.length == 0">
+    <h3><strong>History is empty</strong></h3>
+  </div>
+
+  <button
+    *ngIf="searchHistories.length > 0"
+    mat-raised-button
+    color="primary"
+    (click)="clear()"
+  >
+    Clear Search History
+  </button>
+</div>
